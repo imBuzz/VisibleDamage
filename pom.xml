@@ -38,7 +38,6 @@
         <finalName>VisibleDamage</finalName>
 
         <plugins>
-            <!-- Combine all dependencies into 1 jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
