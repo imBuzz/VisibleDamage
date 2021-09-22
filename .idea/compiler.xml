@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="v1_16_R1" />
+        <module name="v1_15_R1" />
+        <module name="v1_16_R2" />
+        <module name="v1_16_R3" />
+        <module name="v1_14_R1" />
+        <module name="v1_11_R1" />
+        <module name="v1_9_R2" />
+        <module name="v1_8_R1" />
+        <module name="v1_8_R2" />
+        <module name="v1_13_R2" />
+        <module name="v1_12_R1" />
+        <module name="v1_13_R1" />
+        <module name="v1_9_R1" />
+        <module name="v1_8_R3" />
+      </profile>
+      <profile name="Annotation profile for VisibleDamage" enabled="true">
+        <sourceOutputDir name="../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="core" />
+        <module name="v1_10_R1" />
+        <module name="jar" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="v1_8_R3 (1)" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

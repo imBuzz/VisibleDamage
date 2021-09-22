@@ -1,0 +1,20 @@
+# How many decimal places to truncate indicator values
+# A value of 2 means that all damage indicators will show as x.xx
+indicator-decimals: 2
+# How many blocks should indicators spawn above the player
+# It is best to keep this value nonzero to prevent indicators from blocking the player view
+hologram-offset: 0.25
+# How many seconds should indicators can see by the player
+hologram-alive: 3
+# Format used when an entity takes damage
+damage-format: "&b- %damage%"
+
+# VisibleDamage will not display any (damage) indicators in the following worlds
+# World names are cAsE sEnSiTiVe
+disabled-worlds:
+  - nodelay
+  - testworld
+
+# Toggles the below entity type blacklist.
+entity-type-blacklist:
+  - ARMOR_STAND

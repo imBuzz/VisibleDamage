@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>VisibleDamage</artifactId>
+        <groupId>me.imbuzz.dev.visibledamage</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>jar</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!-- Plugin core -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_8_R1 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_8_R1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_8_R2 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_8_R2</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_8_R3 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_8_R3</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_9_R1 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_9_R1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_9_R2 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_9_R2</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_10_R1 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_10_R1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_11_R1 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_11_R1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_12_R1 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_12_R1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_13_R1 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_13_R1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_13_R2 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_13_R2</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_14_R1 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_14_R1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_15_R1 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_15_R1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_16_R1 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_16_R1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_16_R2 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_16_R2</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 1_16_R3 protocol implementation -->
+        <dependency>
+            <groupId>me.imbuzz.dev.visibledamage</groupId>
+            <artifactId>v1_16_R3</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <directory>../target</directory>
+        <finalName>VisibleDamage</finalName>
+        <resources>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>true</filtering>
+                <directory>${basedir}/../core/src/main/resources/</directory>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <!-- Combine all dependencies into 1 jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <artifactSet>
+                                <includes>
+                                    <include>me.imbuzz.dev.visibledamage:*</include>
+                                </includes>
+                            </artifactSet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
